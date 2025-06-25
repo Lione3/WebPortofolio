@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Ali Rohmatulloh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 2rem;
+            border-bottom: 3px solid #b00020;
+        }
+        header h1 {
+            color: #b00020;
+        }
+        nav {
+            background-color: #2a2a2a;
+            padding: 1rem;
+        }
+        nav a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #ff5252;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #b00020;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .profile-img.zoomed {
+            transform: scale(2);
+            z-index: 1000;
+            position: relative;
+        }
+        h2 {
+            color: #ff1744;
+            border-bottom: 2px solid #ff1744;
+            padding-bottom: 0.5rem;
+        }
+        a {
+            color: #ff5252;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .lang-switch {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="btn btn-danger" id="lang-button" onclick="switchLanguage()">Ganti Bahasa</button>
+    </div>
+
+    <header class="text-center">
+        <h1 id="name">Ali Rohmatulloh</h1>
+        <img src="foto.jpg" alt="Foto Ali Rohmatulloh" class="profile-img" id="profileImg">
+    </header>
+
+    <nav class="text-center">
+        <a href="#about-title" id="nav-about">Tentang</a>
+        <a href="#skills-title" id="nav-skills">Keahlian</a>
+        <a href="#contact" id="nav-contact">Kontak</a>
+    </nav>
+
+    <main class="container py-4">
+        <section class="section">
+            <h2 id="about-title">Tentang Saya</h2>
+            <p id="about-text">Saya adalah seorang pengembang web yang berfokus pada pembuatan situs yang responsif, menarik secara visual, dan mudah digunakan. Saya menyukai kombinasi antara desain dan fungsionalitas dalam proyek-proyek saya.</p>
+        </section>
+
+        <section class="section">
+            <h2 id="skills-title">Keahlian</h2>
+            <ul class="list-group list-group-flush" id="skills-list">
+                <li class="list-group-item bg-transparent text-light">HTML, CSS, JavaScript</li>
+                <li class="list-group-item bg-transparent text-light">Frontend Frameworks (React, Tailwind)</li>
+                <li class="list-group-item bg-transparent text-light">Desain Responsif</li>
+                <li class="list-group-item bg-transparent text-light">Git & GitHub</li>
+            </ul>
+        </section>
+
+        <section class="section" id="contact">
+            <h2 id="contact-title">Kontak</h2>
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Nama Anda">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                </div>
+                <div class="col-12">
+                    <label for="pesan" class="form-label">Pesan</label>
+                    <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan Anda..."></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-danger">Kirim</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let isIndo = true;
+
+        function switchLanguage() {
+            isIndo = !isIndo;
+
+            document.getElementById('lang-button').innerText = isIndo ? 'Ganti Bahasa' : 'Switch Language';
+            document.getElementById('nav-about').innerText = isIndo ? 'Tentang' : 'About';
+            document.getElementById('nav-skills').innerText = isIndo ? 'Keahlian' : 'Skills';
+            document.getElementById('nav-contact').innerText = isIndo ? 'Kontak' : 'Contact';
+
+            document.getElementById('about-title').innerText = isIndo ? 'Tentang Saya' : 'About Me';
+            document.getElementById('about-text').innerText = isIndo
+                ? 'Saya adalah seorang pengembang web yang berfokus pada pembuatan situs yang responsif, menarik secara visual, dan mudah digunakan. Saya menyukai kombinasi antara desain dan fungsionalitas dalam proyek-proyek saya.'
+                : 'I am a web developer focused on creating responsive, visually appealing, and user-friendly websites. I enjoy combining design and functionality in my projects.';
+
+            document.getElementById('skills-title').innerText = isIndo ? 'Keahlian' : 'Skills';
+            const skills = document.getElementById('skills-list').children;
+            skills[0].innerText = 'HTML, CSS, JavaScript';
+            skills[1].innerText = isIndo ? 'Frontend Frameworks (React, Tailwind)' : 'Frontend Frameworks (React, Tailwind)';
+            skills[2].innerText = isIndo ? 'Desain Responsif' : 'Responsive Design';
+            skills[3].innerText = 'Git & GitHub';
+
+            document.getElementById('contact-title').innerText = isIndo ? 'Kontak' : 'Contact';
+            document.querySelector("label[for='nama']").innerText = isIndo ? 'Nama' : 'Name';
+            document.querySelector("input#nama").placeholder = isIndo ? 'Nama Anda' : 'Your Name';
+            document.querySelector("label[for='email']").innerText = isIndo ? 'Email' : 'Email';
+            document.querySelector("input#email").placeholder = isIndo ? 'email@example.com' : 'email@example.com';
+            document.querySelector("label[for='pesan']").innerText = isIndo ? 'Pesan' : 'Message';
+            document.querySelector("textarea#pesan").placeholder = isIndo ? 'Tulis pesan Anda...' : 'Write your message...';
+            document.querySelector("button[type='submit']").innerText = isIndo ? 'Kirim' : 'Send';
+        }
+
+        // Zoom image on click
+        const profileImg = document.getElementById('profileImg');
+        profileImg.addEventListener('click', function() {
+            profileImg.classList.toggle('zoomed');
+        });
+    </script>
+</body>
+</html>
