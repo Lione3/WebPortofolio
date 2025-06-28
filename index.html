@@ -84,6 +84,9 @@
             margin-right: 10px;
             color: #ff5252;
         }
+        .card p, .card li, .card label, .card input, .card textarea {
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -99,7 +102,7 @@
     <nav>
         <a href="#about" id="nav-about">Tentang</a>
         <a href="#skills" id="nav-skills">Keahlian</a>
-        <a href="#contact" id="nav-contact">Kotak Saran</a>
+        <a href="#contact" id="nav-contact">Kontak</a>
     </nav>
 
     <main class="container py-5">
@@ -125,11 +128,25 @@
         </section>
 
         <section class="section" id="contact" data-aos="fade-up">
-            <h2 id="contact-title"><i class="fas fa-envelope icon"></i>Kotak Saran</h2>
+            <h2 id="contact-title"><i class="fas fa-envelope icon"></i>Kontak</h2>
             <div class="card p-4">
-                <p>Email: <a href="mailto:ali.rohmatulloh.id@gmail.com" style="color:#ff5252">ali.rohmatulloh.id@gmail.com</a></p>
-                <p>Instagram: <a href="https://instagram.com/ali.ig.id" target="_blank" style="color:#ff5252">@ali.ig.id</a></p>
-                <p>WhatsApp: <a href="https://wa.me/6287888215358" target="_blank" style="color:#ff5252">087888215358</a></p>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama Anda">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                    </div>
+                    <div class="col-12">
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan Anda..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Kirim</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
@@ -149,13 +166,13 @@
         function applyLanguage() {
             document.getElementById('nav-about').innerText = isIndo ? 'Tentang' : 'About';
             document.getElementById('nav-skills').innerText = isIndo ? 'Keahlian' : 'Skills';
-            document.getElementById('nav-contact').innerText = isIndo ? 'Kotak Saran' : 'Suggestion Box';
+            document.getElementById('nav-contact').innerText = isIndo ? 'Kontak' : 'Contact';
             document.getElementById('about-title').innerHTML = `<i class="fas fa-user icon"></i>` + (isIndo ? 'Tentang Saya' : 'About Me');
             document.getElementById('about-text').innerText = isIndo
                 ? 'Saya adalah Ali Rohmatulloh, seorang mahasiswa Sistem Informasi yang sedang belajar pengembangan web. Saya menyukai kombinasi antara desain visual yang menarik dan fungsionalitas yang baik.'
                 : 'I am Ali Rohmatulloh, an Information Systems student currently learning web development. I enjoy combining attractive design with solid functionality.';
             document.getElementById('skills-title').innerHTML = `<i class="fas fa-code icon"></i>` + (isIndo ? 'Keahlian' : 'Skills');
-            document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope icon"></i>` + (isIndo ? 'Kotak Saran' : 'Suggestion Box');
+            document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope icon"></i>` + (isIndo ? 'Kontak' : 'Contact');
         }
 
         applyLanguage();
