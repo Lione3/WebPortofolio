@@ -87,7 +87,7 @@
             margin-right: 10px;
             color: #ff5252;
         }
-        .card p, .card li, .card label, .card input, .card textarea {
+        .card p, .card li, .card label, .card input, .card textarea, .card a {
             color: #ffffff;
         }
     </style>
@@ -105,7 +105,7 @@
     <nav>
         <a href="#about" id="nav-about">Tentang</a>
         <a href="#skills" id="nav-skills">Keahlian</a>
-        <a href="#contact" id="nav-contact">Kotak Saran</a>
+        <a href="#contact" id="nav-contact">Kontak</a>
     </nav>
 
     <main class="container py-5">
@@ -131,7 +131,16 @@
         </section>
 
         <section class="section" id="contact" data-aos="fade-up">
-            <h2 id="contact-title"><i class="fas fa-envelope icon"></i>Kotak Saran</h2>
+            <h2 id="contact-title"><i class="fas fa-envelope icon"></i>Kontak</h2>
+            <div class="card p-4">
+                <p><i class="fas fa-envelope icon"></i>Email: <a href="mailto:ali.rohmatulloh.id@gmail.com" class="text-decoration-none text-white">ali.rohmatulloh.id@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp icon"></i>WhatsApp: <a href="https://wa.me/6287888215358" class="text-decoration-none text-white">0878-8821-5358</a></p>
+                <p><i class="fab fa-instagram icon"></i>Instagram: <a href="https://instagram.com/ali.ig.id" target="_blank" class="text-decoration-none text-white">@ali.ig.id</a></p>
+            </div>
+        </section>
+
+        <section class="section" id="suggestion" data-aos="fade-up">
+            <h2><i class="fas fa-comment icon"></i>Kotak Saran</h2>
             <div class="card p-4">
                 <form class="row g-3">
                     <div class="col-md-6">
@@ -169,13 +178,13 @@
         function applyLanguage() {
             document.getElementById('nav-about').innerText = isIndo ? 'Tentang' : 'About';
             document.getElementById('nav-skills').innerText = isIndo ? 'Keahlian' : 'Skills';
-            document.getElementById('nav-contact').innerText = isIndo ? 'Kotak Saran' : 'Suggestion Box';
+            document.getElementById('nav-contact').innerText = isIndo ? 'Kontak' : 'Contact';
             document.getElementById('about-title').innerHTML = `<i class="fas fa-user icon"></i>` + (isIndo ? 'Tentang Saya' : 'About Me');
             document.getElementById('about-text').innerText = isIndo
                 ? 'Saya adalah Ali Rohmatulloh, seorang mahasiswa Sistem Informasi yang sedang belajar pengembangan web. Saya menyukai kombinasi antara desain visual yang menarik dan fungsionalitas yang baik.'
                 : 'I am Ali Rohmatulloh, an Information Systems student currently learning web development. I enjoy combining attractive design with solid functionality.';
             document.getElementById('skills-title').innerHTML = `<i class="fas fa-code icon"></i>` + (isIndo ? 'Keahlian' : 'Skills');
-            document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope icon"></i>` + (isIndo ? 'Kotak Saran' : 'Suggestion Box');
+            document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope icon"></i>` + (isIndo ? 'Kontak' : 'Contact');
         }
 
         applyLanguage();
