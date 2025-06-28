@@ -94,7 +94,48 @@
     <main class="container py-4">
         <section class="section">
             <h2 id="about-title">Tentang Saya</h2>
-            <p id="about-text">Saya adalah seorang pengembang web yang berfokus pada pembuatan situs yang responsif, menarik secara visual, dan mudah digunakan. Saya menyukai kombinasi antara desain dan fungsionalitas dalam proyek-proyek saya.</p>
+            <p id="about-text">
+                Saya adalah Ali Rohmatulloh, seorang mahasiswa jurusan Sistem Informasi yang sedang mengembangkan keterampilan di bidang pengembangan web. Meskipun masih pemula, saya memiliki semangat besar untuk belajar dan membuat berbagai proyek sederhana menggunakan HTML, CSS, dan JavaScript. Saya fokus pada desain antarmuka yang menarik, ramah pengguna, dan responsif.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 id="education-title">Pendidikan</h2>
+            <ul class="list-group list-group-flush" id="education-list">
+                <li class="list-group-item bg-transparent text-light" id="edu-1">S1 Sistem Informasi - [Nama Kampus], [Tahun Masuk] - Sekarang</li>
+                <li class="list-group-item bg-transparent text-light" id="edu-2">SMA/SMK - [Nama Sekolah], Lulus [Tahun]</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 id="certification-title">Sertifikasi</h2>
+            <ul class="list-group list-group-flush" id="certification-list">
+                <li class="list-group-item bg-transparent text-light" id="cert-1">Pembuatan Website E-Commerce dengan WordPress</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 id="interest-title">Minat</h2>
+            <ul class="list-group list-group-flush" id="interest-list">
+                <li class="list-group-item bg-transparent text-light" id="int-1">Pengembangan Web Frontend</li>
+                <li class="list-group-item bg-transparent text-light" id="int-2">Desain Antarmuka (UI/UX)</li>
+                <li class="list-group-item bg-transparent text-light" id="int-3">Game dan Teknologi</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 id="language-title">Bahasa</h2>
+            <ul class="list-group list-group-flush" id="language-list">
+                <li class="list-group-item bg-transparent text-light" id="lang-1">Bahasa Indonesia (Aktif)</li>
+                <li class="list-group-item bg-transparent text-light" id="lang-2">Bahasa Inggris (Dasar)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 id="career-title">Tujuan Karier</h2>
+            <p id="career-text">
+                Saya ingin menjadi pengembang web profesional yang mampu membangun website dan aplikasi modern dengan tampilan menarik dan fungsionalitas tinggi. Saya juga ingin terus belajar dan berkembang di bidang teknologi web serta terlibat dalam proyek-proyek nyata yang bermanfaat.
+            </p>
         </section>
 
         <section class="section">
@@ -145,13 +186,41 @@
 
             document.getElementById('about-title').innerText = isIndo ? 'Tentang Saya' : 'About Me';
             document.getElementById('about-text').innerText = isIndo
-                ? 'Saya adalah seorang pengembang web yang berfokus pada pembuatan situs yang responsif, menarik secara visual, dan mudah digunakan. Saya menyukai kombinasi antara desain dan fungsionalitas dalam proyek-proyek saya.'
-                : 'I am a web developer focused on creating responsive, visually appealing, and user-friendly websites. I enjoy combining design and functionality in my projects.';
+                ? 'Saya adalah Ali Rohmatulloh, seorang mahasiswa jurusan Sistem Informasi yang sedang mengembangkan keterampilan di bidang pengembangan web. Meskipun masih pemula, saya memiliki semangat besar untuk belajar dan membuat berbagai proyek sederhana menggunakan HTML, CSS, dan JavaScript. Saya fokus pada desain antarmuka yang menarik, ramah pengguna, dan responsif.'
+                : 'I am Ali Rohmatulloh, an Information Systems student developing my skills in web development. Although I am still a beginner, I am eager to learn and build simple projects using HTML, CSS, and JavaScript. I focus on creating user-friendly and responsive interface designs.';
+
+            document.getElementById('education-title').innerText = isIndo ? 'Pendidikan' : 'Education';
+            document.getElementById('edu-1').innerText = isIndo
+                ? 'S1 Sistem Informasi - [Nama Kampus], [Tahun Masuk] - Sekarang'
+                : 'Bachelor of Information Systems - [University Name], [Start Year] - Present';
+            document.getElementById('edu-2').innerText = isIndo
+                ? 'SMA/SMK - [Nama Sekolah], Lulus [Tahun]'
+                : 'Senior High School/Vocational - [School Name], Graduated [Year]';
+
+            document.getElementById('certification-title').innerText = isIndo ? 'Sertifikasi' : 'Certifications';
+            document.getElementById('cert-1').innerText = isIndo
+                ? 'Pembuatan Website E-Commerce dengan WordPress'
+                : 'E-Commerce Website Development with WordPress';
+
+            document.getElementById('interest-title').innerText = isIndo ? 'Minat' : 'Interests';
+            document.getElementById('int-1').innerText = isIndo ? 'Pengembangan Web Frontend' : 'Frontend Web Development';
+            document.getElementById('int-2').innerText = isIndo ? 'Desain Antarmuka (UI/UX)' : 'UI/UX Design';
+            document.getElementById('int-3').innerText = isIndo ? 'Game dan Teknologi' : 'Games and Technology';
+
+            document.getElementById('language-title').innerText = isIndo ? 'Bahasa' : 'Languages';
+            document.getElementById('lang-1').innerText = isIndo ? 'Bahasa Indonesia (Aktif)' : 'Indonesian (Fluent)';
+            document.getElementById('lang-2').innerText = isIndo ? 'Bahasa Inggris (Dasar)' : 'English (Basic)';
+
+            document.getElementById('career-title').innerText = isIndo ? 'Tujuan Karier' : 'Career Goal';
+            document.getElementById('career-text').innerText = isIndo
+                ? 'Saya ingin menjadi pengembang web profesional yang mampu membangun website dan aplikasi modern dengan tampilan menarik dan fungsionalitas tinggi. Saya juga ingin terus belajar dan berkembang di bidang teknologi web serta terlibat dalam proyek-proyek nyata yang bermanfaat.'
+                : 'I want to become a professional web developer capable of building modern websites and apps with attractive visuals and strong functionality. I also aim to keep learning and growing in web technology and be involved in impactful real-world projects.';
 
             document.getElementById('skills-title').innerText = isIndo ? 'Keahlian' : 'Skills';
+
             const skills = document.getElementById('skills-list').children;
             skills[0].innerText = 'HTML, CSS, JavaScript';
-            skills[1].innerText = isIndo ? 'Frontend Frameworks (React, Tailwind)' : 'Frontend Frameworks (React, Tailwind)';
+            skills[1].innerText = 'Frontend Frameworks (React, Tailwind)';
             skills[2].innerText = isIndo ? 'Desain Responsif' : 'Responsive Design';
             skills[3].innerText = 'Git & GitHub';
 
@@ -159,18 +228,16 @@
             document.querySelector("label[for='nama']").innerText = isIndo ? 'Nama' : 'Name';
             document.querySelector("input#nama").placeholder = isIndo ? 'Nama Anda' : 'Your Name';
             document.querySelector("label[for='email']").innerText = isIndo ? 'Email' : 'Email';
-            document.querySelector("input#email").placeholder = isIndo ? 'email@example.com' : 'email@example.com';
+            document.querySelector("input#email").placeholder = 'email@example.com';
             document.querySelector("label[for='pesan']").innerText = isIndo ? 'Pesan' : 'Message';
             document.querySelector("textarea#pesan").placeholder = isIndo ? 'Tulis pesan Anda...' : 'Write your message...';
             document.querySelector("button[type='submit']").innerText = isIndo ? 'Kirim' : 'Send';
         }
 
-        // Set initial language based on device
         applyLanguage();
 
-        // Zoom image on click
         const profileImg = document.getElementById('profileImg');
-        profileImg.addEventListener('click', function() {
+        profileImg.addEventListener('click', function () {
             profileImg.classList.toggle('zoomed');
         });
     </script>
