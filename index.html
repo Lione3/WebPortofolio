@@ -5,27 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Ali Rohmatulloh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #121212;
             color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
         }
         header {
-            background-color: #1f1f1f;
+            background: linear-gradient(90deg, #1f1f1f, #2c2c2c);
             padding: 2rem;
             border-bottom: 3px solid #b00020;
+            text-align: center;
         }
         header h1 {
-            color: #b00020;
+            color: #ff1744;
         }
         nav {
-            background-color: #2a2a2a;
+            background-color: #1a1a1a;
             padding: 1rem;
+            text-align: center;
         }
         nav a {
             color: #e0e0e0;
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
+            transition: color 0.3s;
         }
         nav a:hover {
             color: #ff5252;
@@ -35,30 +42,31 @@
             height: 150px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #b00020;
+            border: 3px solid #ff1744;
             margin-top: 1rem;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .profile-img.zoomed {
-            transform: scale(2);
-            z-index: 1000;
-            position: relative;
+        .profile-img:hover {
+            transform: scale(1.1);
         }
         h2 {
             color: #ff1744;
+            margin-top: 2rem;
             border-bottom: 2px solid #ff1744;
             padding-bottom: 0.5rem;
         }
-        a {
-            color: #ff5252;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #2c2c2c;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(255, 23, 68, 0.3);
         }
         .lang-switch {
             position: fixed;
@@ -69,109 +77,82 @@
         .lang-switch button {
             background: none;
             border: none;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             color: white;
-            padding: 2px 4px;
+        }
+        .icon {
+            margin-right: 10px;
+            color: #ff5252;
         }
     </style>
 </head>
 <body>
     <div class="lang-switch">
-        <button id="lang-button" onclick="switchLanguage()">🌐</button>
+        <button onclick="switchLanguage()">🌐</button>
     </div>
 
-    <header class="text-center">
+    <header>
         <h1 id="name">Ali Rohmatulloh</h1>
-        <img src="lite.jpg" alt="Foto Ali Rohmatulloh" class="profile-img" id="profileImg">
+        <img src="lite.jpg" alt="Foto Ali Rohmatulloh" class="profile-img">
     </header>
 
-    <nav class="text-center">
-        <a href="#about-title" id="nav-about">Tentang</a>
-        <a href="#skills-title" id="nav-skills">Keahlian</a>
+    <nav>
+        <a href="#about" id="nav-about">Tentang</a>
+        <a href="#skills" id="nav-skills">Keahlian</a>
         <a href="#contact" id="nav-contact">Kontak</a>
     </nav>
 
-    <main class="container py-4">
-        <section class="section">
-            <h2 id="about-title">Tentang Saya</h2>
-            <p id="about-text">
-                Saya adalah Ali Rohmatulloh, seorang mahasiswa jurusan Sistem Informasi yang sedang mengembangkan keterampilan di bidang pengembangan web. Meskipun masih pemula, saya memiliki semangat besar untuk belajar dan membuat berbagai proyek sederhana menggunakan HTML, CSS, dan JavaScript. Saya fokus pada desain antarmuka yang menarik, ramah pengguna, dan responsif.
-            </p>
+    <main class="container py-5">
+        <section class="section" id="about" data-aos="fade-up">
+            <h2 id="about-title"><i class="fas fa-user icon"></i>Tentang Saya</h2>
+            <div class="card p-4">
+                <p id="about-text">
+                    Saya adalah Ali Rohmatulloh, seorang mahasiswa Sistem Informasi yang sedang belajar pengembangan web. Saya menyukai kombinasi antara desain visual yang menarik dan fungsionalitas yang baik.
+                </p>
+            </div>
         </section>
 
-        <section class="section">
-            <h2 id="education-title">Pendidikan</h2>
-            <ul class="list-group list-group-flush" id="education-list">
-                <li class="list-group-item bg-transparent text-light" id="edu-1">S1 Sistem Informasi - [Nama Kampus], [Tahun Masuk] - Sekarang</li>
-                <li class="list-group-item bg-transparent text-light" id="edu-2">SMA/SMK - [Nama Sekolah], Lulus [Tahun]</li>
-            </ul>
+        <section class="section" id="skills" data-aos="fade-up">
+            <h2 id="skills-title"><i class="fas fa-code icon"></i>Keahlian</h2>
+            <div class="card p-4">
+                <ul class="list-unstyled">
+                    <li><i class="fab fa-html5 icon"></i>HTML, CSS, JavaScript</li>
+                    <li><i class="fas fa-layer-group icon"></i>Frontend Frameworks (React, Tailwind)</li>
+                    <li><i class="fas fa-mobile-alt icon"></i>Desain Responsif</li>
+                    <li><i class="fab fa-github icon"></i>Git & GitHub</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="section">
-            <h2 id="certification-title">Sertifikasi</h2>
-            <ul class="list-group list-group-flush" id="certification-list">
-                <li class="list-group-item bg-transparent text-light" id="cert-1">Pembuatan Website E-Commerce dengan WordPress</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 id="interest-title">Minat</h2>
-            <ul class="list-group list-group-flush" id="interest-list">
-                <li class="list-group-item bg-transparent text-light" id="int-1">Pengembangan Web Frontend</li>
-                <li class="list-group-item bg-transparent text-light" id="int-2">Desain Antarmuka (UI/UX)</li>
-                <li class="list-group-item bg-transparent text-light" id="int-3">Game dan Teknologi</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 id="language-title">Bahasa</h2>
-            <ul class="list-group list-group-flush" id="language-list">
-                <li class="list-group-item bg-transparent text-light" id="lang-1">Bahasa Indonesia (Aktif)</li>
-                <li class="list-group-item bg-transparent text-light" id="lang-2">Bahasa Inggris (Dasar)</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 id="career-title">Tujuan Karier</h2>
-            <p id="career-text">
-                Saya ingin menjadi pengembang web profesional yang mampu membangun website dan aplikasi modern dengan tampilan menarik dan fungsionalitas tinggi. Saya juga ingin terus belajar dan berkembang di bidang teknologi web serta terlibat dalam proyek-proyek nyata yang bermanfaat.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2 id="skills-title">Keahlian</h2>
-            <ul class="list-group list-group-flush" id="skills-list">
-                <li class="list-group-item bg-transparent text-light">HTML, CSS, JavaScript</li>
-                <li class="list-group-item bg-transparent text-light">Frontend Frameworks (React, Tailwind)</li>
-                <li class="list-group-item bg-transparent text-light">Desain Responsif</li>
-                <li class="list-group-item bg-transparent text-light">Git & GitHub</li>
-            </ul>
-        </section>
-
-        <section class="section" id="contact">
-            <h2 id="contact-title">Kontak</h2>
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Nama Anda">
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="email@example.com">
-                </div>
-                <div class="col-12">
-                    <label for="pesan" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan Anda..."></textarea>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-danger">Kirim</button>
-                </div>
-            </form>
+        <section class="section" id="contact" data-aos="fade-up">
+            <h2 id="contact-title"><i class="fas fa-envelope icon"></i>Kontak</h2>
+            <div class="card p-4">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama Anda">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                    </div>
+                    <div class="col-12">
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan Anda..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Kirim</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init();
+
         let isIndo = navigator.language.startsWith('id');
 
         function switchLanguage() {
@@ -183,48 +164,12 @@
             document.getElementById('nav-about').innerText = isIndo ? 'Tentang' : 'About';
             document.getElementById('nav-skills').innerText = isIndo ? 'Keahlian' : 'Skills';
             document.getElementById('nav-contact').innerText = isIndo ? 'Kontak' : 'Contact';
-
-            document.getElementById('about-title').innerText = isIndo ? 'Tentang Saya' : 'About Me';
+            document.getElementById('about-title').innerHTML = `<i class="fas fa-user icon"></i>` + (isIndo ? 'Tentang Saya' : 'About Me');
             document.getElementById('about-text').innerText = isIndo
-                ? 'Saya adalah Ali Rohmatulloh, seorang mahasiswa jurusan Sistem Informasi yang sedang mengembangkan keterampilan di bidang pengembangan web. Meskipun masih pemula, saya memiliki semangat besar untuk belajar dan membuat berbagai proyek sederhana menggunakan HTML, CSS, dan JavaScript. Saya fokus pada desain antarmuka yang menarik, ramah pengguna, dan responsif.'
-                : 'I am Ali Rohmatulloh, an Information Systems student developing my skills in web development. Although I am still a beginner, I am eager to learn and build simple projects using HTML, CSS, and JavaScript. I focus on creating user-friendly and responsive interface designs.';
-
-            document.getElementById('education-title').innerText = isIndo ? 'Pendidikan' : 'Education';
-            document.getElementById('edu-1').innerText = isIndo
-                ? 'S1 Sistem Informasi - [Nama Kampus], [Tahun Masuk] - Sekarang'
-                : 'Bachelor of Information Systems - [University Name], [Start Year] - Present';
-            document.getElementById('edu-2').innerText = isIndo
-                ? 'SMA/SMK - [Nama Sekolah], Lulus [Tahun]'
-                : 'Senior High School/Vocational - [School Name], Graduated [Year]';
-
-            document.getElementById('certification-title').innerText = isIndo ? 'Sertifikasi' : 'Certifications';
-            document.getElementById('cert-1').innerText = isIndo
-                ? 'Pembuatan Website E-Commerce dengan WordPress'
-                : 'E-Commerce Website Development with WordPress';
-
-            document.getElementById('interest-title').innerText = isIndo ? 'Minat' : 'Interests';
-            document.getElementById('int-1').innerText = isIndo ? 'Pengembangan Web Frontend' : 'Frontend Web Development';
-            document.getElementById('int-2').innerText = isIndo ? 'Desain Antarmuka (UI/UX)' : 'UI/UX Design';
-            document.getElementById('int-3').innerText = isIndo ? 'Game dan Teknologi' : 'Games and Technology';
-
-            document.getElementById('language-title').innerText = isIndo ? 'Bahasa' : 'Languages';
-            document.getElementById('lang-1').innerText = isIndo ? 'Bahasa Indonesia (Aktif)' : 'Indonesian (Fluent)';
-            document.getElementById('lang-2').innerText = isIndo ? 'Bahasa Inggris (Dasar)' : 'English (Basic)';
-
-            document.getElementById('career-title').innerText = isIndo ? 'Tujuan Karier' : 'Career Goal';
-            document.getElementById('career-text').innerText = isIndo
-                ? 'Saya ingin menjadi pengembang web profesional yang mampu membangun website dan aplikasi modern dengan tampilan menarik dan fungsionalitas tinggi. Saya juga ingin terus belajar dan berkembang di bidang teknologi web serta terlibat dalam proyek-proyek nyata yang bermanfaat.'
-                : 'I want to become a professional web developer capable of building modern websites and apps with attractive visuals and strong functionality. I also aim to keep learning and growing in web technology and be involved in impactful real-world projects.';
-
-            document.getElementById('skills-title').innerText = isIndo ? 'Keahlian' : 'Skills';
-
-            const skills = document.getElementById('skills-list').children;
-            skills[0].innerText = 'HTML, CSS, JavaScript';
-            skills[1].innerText = 'Frontend Frameworks (React, Tailwind)';
-            skills[2].innerText = isIndo ? 'Desain Responsif' : 'Responsive Design';
-            skills[3].innerText = 'Git & GitHub';
-
-            document.getElementById('contact-title').innerText = isIndo ? 'Kontak' : 'Contact';
+                ? 'Saya adalah Ali Rohmatulloh, seorang mahasiswa Sistem Informasi yang sedang belajar pengembangan web. Saya menyukai kombinasi antara desain visual yang menarik dan fungsionalitas yang baik.'
+                : 'I am Ali Rohmatulloh, an Information Systems student currently learning web development. I enjoy combining attractive design with solid functionality.';
+            document.getElementById('skills-title').innerHTML = `<i class="fas fa-code icon"></i>` + (isIndo ? 'Keahlian' : 'Skills');
+            document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope icon"></i>` + (isIndo ? 'Kontak' : 'Contact');
             document.querySelector("label[for='nama']").innerText = isIndo ? 'Nama' : 'Name';
             document.querySelector("input#nama").placeholder = isIndo ? 'Nama Anda' : 'Your Name';
             document.querySelector("label[for='email']").innerText = isIndo ? 'Email' : 'Email';
@@ -235,11 +180,7 @@
         }
 
         applyLanguage();
-
-        const profileImg = document.getElementById('profileImg');
-        profileImg.addEventListener('click', function () {
-            profileImg.classList.toggle('zoomed');
-        });
     </script>
 </body>
 </html>
+
